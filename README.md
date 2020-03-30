@@ -10,3 +10,13 @@ This repo tackles the first round of Zillow’s Home Value Prediction Competitio
 #### CatBoost is an algorithm for gradient boosting on decision trees. Therefore it is excellent in prediction and recommendation models, in the meanwhile, catboost requires the least amount of RAM and time(you can get the best result after the first run).
 #### Light GBM is also a high performance algorithm for gradient boosting on decision trees, as well as handling large scale of data with distributed framework. In this model, the outlier is set to be 0.4, this is because the standard deviation of the log error is 0.161, and we usually obtain data within 3*SD, so 0.4 is an ideal threshold number. We also have to drop some useless features such as 'framing_id', 'architecture_style_id', 'story_id', 'perimeter_area', 'basement_sqft', 'storage_sqft','fireplace_flag', 'deck_id', 'pool_unk_1', 'construction_id', 'county_id', 'fips' for the training processing
 #### Therefore with tuned model 0.7 of Catboost and 0.3 of Light GBM gives the highest performance
+
+
+| __Model__  | __Public Board Score__ | __Private Board Score__ |
+|-------------|------------|------------|
+| Catboost_x8|      0.06434       | 0.07523 |
+| Catboost   | 0.06435            |  0.07523 |
+| Light GBM_x5   | 0.06440           |  0.07523 |
+| Light GBM | 0.06437 |0.07520 
+| Stack   | 0.06428           |  0.07523|
+
